@@ -28,7 +28,17 @@ UploadFile.addEventListener('change', (e) => {
 
     //Add image to canvas
     reader.addEventListener('load', () => {
-    
+    //Create Img
+        img = new Image();
+        //Set src
+        img.src = reader.result;
+        //On image load, add to canvas
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            canvas.removeAttribute('data-caman-id'); 
+        }
 
     });
 });
