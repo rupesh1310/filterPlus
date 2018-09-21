@@ -40,5 +40,5 @@ UploadFile.addEventListener('change', (e) => {
             canvas.removeAttribute('data-caman-id'); 
         }
 
-    });
+    }, false);
 });
